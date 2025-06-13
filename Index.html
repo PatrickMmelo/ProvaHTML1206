@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Controle de Marmitas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Pedidos de Marmitas Saudáveis</h1>
+    
+    <form id="pedidoForm">
+      <label>Nome do cliente:</label>
+      <input type="text" id="nome" required />
+
+      <label>Tipo de marmita:</label>
+      <select id="tipo" required>
+        <option value="Low Carb">Low Carb</option>
+        <option value="Vegetariana">Vegetariana</option>
+        <option value="Tradicional">Tradicional</option>
+      </select>
+
+      <label>Quantidade de marmitas:</label>
+      <input type="number" id="quantidade" min="1" required />
+
+      <fieldset>
+        <legend>Restrições alimentares:</legend>
+        <label><input type="checkbox" value="Sem glúten" class="restricao" /> Sem glúten</label>
+        <label><input type="checkbox" value="Sem lactose" class="restricao" /> Sem lactose</label>
+      </fieldset>
+
+      <button type="submit" id="btnRegistrar">Registrar Pedido</button>
+      <p id="mensagem"></p>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Cliente</th>
+          <th>Tipo</th>
+          <th>Qtde</th>
+          <th>Restrições</th>
+          <th>Valor Total</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="tabelaPedidos">
+      </tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
